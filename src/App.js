@@ -1,25 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import io from 'socket.io-client'
+import Header from './components/header/header'
+import Footer from './components/footer/footer';
+import { useEffect } from 'react'
+import { observer } from 'mobx-react'
 
-function App() {
+import mainStore from './store/mainStore';
+import Button from './components/button/button';
+
+const socket = io.connect('http://localhost:2000/', {query: 'username=' + "username"});
+
+const App = observer(() => {
+  useEffect(() => {
+    socket.on('connect', () => {
+      mainStore.connected(socket);
+      console.log(mainStore);
+    })
+    socket.on('score', function(player){
+      mainStore.updateScore(player);
+    })
+  }, [socket])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+
+      <Button />
+
+      <Footer />
     </div>
   );
-}
+})
 
 export default App;

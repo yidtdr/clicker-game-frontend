@@ -1,0 +1,50 @@
+.button-wrapper{
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: aquamarine;
+    background-image: url('./../../../assets/background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.centered{
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column ;
+    justify-items: center;
+    align-items: center;
+    width: 100vw;
+    z-index: -1;
+}
+.button-text{
+    text-align: center;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(28, 40, 40);
+    display: inline-block;
+    vertical-align: middle; 
+    line-height: normal;
+    color: aliceblue;
+    width: 80vw;
+    font-size: x-large;
+    box-shadow: 10px 10px 0px 0px black;
+}
+.increase-score-button{
+    margin: 0 auto;
+    height: 35vh;
+    width: 35vh;
+    background-image: url('./../../../assets/icons/coin.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+    border: 0;
+    filter: drop-shadow(0 0 15px black) 
+}

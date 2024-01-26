@@ -1,0 +1,23 @@
+.header{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    color: aliceblue;
+    background-color:rgb(28, 40, 40);
+    width: 100vw;
+    height: 10vh;
+    top: 0;
+    left: 0;
+    border-end-end-radius: 4vw 4vw;
+    border-end-start-radius: 4vw 4vw;
+    border: 0;
+    box-shadow: 0px 10px 0px 5px black;
+    z-index: 2;
+}
+.score{
+    margin-right: 4vw;
+    margin-left: auto;
+}
+.nickname{
+    margin-left: 4vw;
+}
